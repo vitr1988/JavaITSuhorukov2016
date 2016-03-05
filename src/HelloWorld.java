@@ -49,7 +49,7 @@ public class HelloWorld {
 		
 		int arg1 = Integer.decode(arguments[0]);
 		int arg2 = Integer.decode(arguments[1]);
-//		Double.parseDouble(s);
+		double dfda = Double.parseDouble("1.2");
 		
 		if (checked){
 			/* Здесь могла быть Ваша реклама
