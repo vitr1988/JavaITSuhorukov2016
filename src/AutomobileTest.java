@@ -66,6 +66,12 @@ public class AutomobileTest {
 //			}
 			car.move();
 		}
+		
+		double coordinateA[][] = new double[25][2];
+		coordinateA[0] = new double[]{2, 3};
+		coordinateA[1] = new double[]{15, 25};
+		coordinateA[2] = new double[]{12, 13};
+		coordinateA[1] = new double[]{15, 25};
 	}
 
 }

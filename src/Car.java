@@ -28,3 +28,12 @@ public class Car extends Automobile {
 		System.out.println("Car moves by wheels");
 	}
 }
+
+//от польз. Басалаев Владимир польз. Все:
+//poztalion2@yandex.ru
+//от польз. Александр Саплиниченко польз. Все:
+//alexlacky@gmail.com
+//от польз. Александр Логинов (персонально):
+//a.loginov91@gmail.com
+//от польз. Расул Отаров польз. Все:
+//ibn-musa@ro.ru
