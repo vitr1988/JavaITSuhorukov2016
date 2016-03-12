@@ -1,3 +1,4 @@
+package ru.suhorukov.auto;
 
 public class Car extends Automobile {
 
@@ -6,6 +7,7 @@ public class Car extends Automobile {
 	public Car(){
 		super(180, 60, 1.5);
 		this.passengerCount = 4;
+		super.engine = new Engine(1.6, 150, 250);
 	}
 	
 	public int getPassengerCount() {
@@ -27,13 +29,18 @@ public class Car extends Automobile {
 	public void move(){
 		System.out.println("Car moves by wheels");
 	}
+	
+	@Override
+	public String toString(){
+		String result = "";
+		result += "[";
+		result += "MaxVelocity = " + getMaxVelocity();
+		result += ", Speed = " + getSpeed();
+		result += ", Height = " + getHeight();
+		result += ", Mark = " + (getMark() == null ? "Не определена" : getMark()); // "null"
+		result += ", PassengerCount = " + getPassengerCount();
+		result += "]";
+				
+		return result;	
+	}
 }
-
-//от польз. Басалаев Владимир польз. Все:
-//poztalion2@yandex.ru
-//от польз. Александр Саплиниченко польз. Все:
-//alexlacky@gmail.com
-//от польз. Александр Логинов (персонально):
-//a.loginov91@gmail.com
-//от польз. Расул Отаров польз. Все:
-//ibn-musa@ro.ru

@@ -1,3 +1,9 @@
+package ru.suhorukov.auto;
+
+import java.util.Arrays;
+import static ru.suhorukov.auto.Automobile.*;
+import static ru.suhorukov.auto.Cargo.cargo2String;
+import static ru.suhorukov.auto.Cargo.MAX_WEIGHT;
 
 public class AutomobileTest {
 
@@ -72,6 +78,57 @@ public class AutomobileTest {
 		coordinateA[1] = new double[]{15, 25};
 		coordinateA[2] = new double[]{12, 13};
 		coordinateA[1] = new double[]{15, 25};
+		
+		Object o = new String();
+		Object o1 = new UFO();
+		
+		boolean flag = new String() == new String(); //flag = false;
+		System.out.println(new UFO() == new UFO()); // false
+		System.out.println(new UFO().equals(new UFO())); // true
+		System.out.println(new UFO().equals(new UFO(10))); // false
+		
+		System.out.println(new Car().toString());
+		
+		System.out.println(orderNumber);
+		
+		System.out.println(Arrays.toString(array));
+		
+		Object[][] array = niva.getCharactistics();
+		for (int index = 0; index < array.length; index++){
+			System.out.print(Arrays.toString(array[index]));
+		}
+		
+		double[] doubleArray = {1., 2., 3, 10.5};
+		double[] doubleArray2;
+		doubleArray2 = new double[4];
+		doubleArray2[0] = 1.;
+		doubleArray2[1] = 2.;
+		doubleArray2[2] = 3;
+		doubleArray2[3] = 10.5;
+		
+		double[][] doubleArray3 = {{1., 2., 3, 10.5}, {1.4, 5.2, 3.5}};
+		doubleArray3[0] = new double[] {1., 2., 3, 10.5};
+		double[][] doubleArray4 = new double[2][3];
+		doubleArray4[0] = new double[]{1.4, 1.2, 5.2, 6.7};
+		System.out.println("-------");
+		for (double[] arr: doubleArray4){
+			System.out.println(Arrays.toString(arr));
+		}
+		
+		System.out.println(cargo2String((Cargo) volvoTruck));
+		System.out.println(MAX_WEIGHT + 1500);
+//		ufo.crash();
+		
+		Moveable vehicle = new Car();
+		vehicle.move();
+		vehicle.print();
+		
+		Moveable[] interfaceCars = {
+			ladaKalina, jeepCherokee, nissan, volvoTruck, futureCar
+		};
+		for (Moveable car : interfaceCars){
+			car.move();
+		}
 	}
 
 }

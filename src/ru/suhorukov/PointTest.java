@@ -1,3 +1,4 @@
+package ru.suhorukov;
 
 public class PointTest {
 
