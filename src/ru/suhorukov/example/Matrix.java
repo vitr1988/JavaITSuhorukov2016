@@ -11,7 +11,7 @@ public class Matrix {
 	public Matrix summa(Matrix anotherMatrix){
 		Matrix result = new Matrix();
 		if (this.matrixData.length != anotherMatrix.matrixData.length){
-			return null;
+			throw new IllegalArgumentException("Размерности матриц расходятся!");
 		}
 		else {
 			//выполняете код сложения Ваших матриц
@@ -21,11 +21,18 @@ public class Matrix {
 	}
 	
 	public static void main(String[] args) {
-//		Matrix matrix1 = new Matrix();
+		Matrix matrix1 = new Matrix();
 //		matrix1.intiElements();
 //		
-//		Matrix matrix2 = new Matrix();
+		Matrix matrix2 = new Matrix();
 //		matrix2.intiElements();
+		
+		try {
+			Matrix matrix3 = matrix1.summa(matrix2);
+		}
+		catch(IllegalArgumentException e){
+			System.out.println(e.getMessage());
+		}
 //		
 //		Matrix matrix3 = matrix1.summa(matrix2);
 //		if (matrix3 != null){
