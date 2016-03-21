@@ -99,7 +99,7 @@ public abstract class Automobile extends Object implements Moveable {
 //			Automobile auto2 = new Automobile();
 			if (this.maxVelocity == auto.maxVelocity &&
 					this.speed == auto.speed && 
-						this.height == auto.height &&
+						this.height == auto.height && (this.mark != null) &&
 							this.mark.equals(((Automobile) obj).mark)){
 				return true;
 			}
