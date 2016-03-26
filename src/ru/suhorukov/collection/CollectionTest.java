@@ -1,6 +1,7 @@
 package ru.suhorukov.collection;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.Random;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
@@ -21,6 +23,8 @@ import ru.suhorukov.auto.Car;
 public class CollectionTest {
 
 	public static void main(String[] args) {
+		long currentTime = System.currentTimeMillis();
+		long time = System.nanoTime();
 		List<Object> diverseList = new ArrayList<>();
 		diverseList.add(1);
 		diverseList.add(2.);
@@ -120,7 +124,7 @@ public class CollectionTest {
 		Set<String> setSt = new TreeSet<>(strList);
 //		Set<String> set = (Set<String>) strList;
 		Set<String> unmodifisbleSet = Collections.unmodifiableSet(setSt);
-		unmodifisbleSet.add("fsghnsgksgf");
+//		unmodifisbleSet.add("fsghnsgksgf");
 		
 		Iterator<String> iter = strList.iterator();
 		while(iter.hasNext()){
@@ -142,7 +146,15 @@ public class CollectionTest {
 //		quue.offer(1);
 //		System.out.println(quue.peek());
 //		System.out.println(quue);
+		System.out.println("Время работы Вашей программы - " +  (System.currentTimeMillis() - currentTime) + " мс");
+		System.out.println("Время работы Вашей программы - " +  (System.nanoTime() - time) + " нс");
 		
+		Random rand = new Random();
+		String phone = "7";
+		for (int i = 0; i < 10; i++){
+			phone += Integer.toString(rand.nextInt(9));
+		}
+		System.out.println(phone);
 	}
 }
 
