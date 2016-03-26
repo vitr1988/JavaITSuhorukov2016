@@ -21,8 +21,13 @@ public class MapTest {
 //		data.put(key, new Employee("Test", -25));
 		
 		TabNumber tabNumber = new TabNumber("1000");
-		if (data.containsKey(tabNumber)){
-			System.out.println(data.get(tabNumber));
+		Employee emp = null;
+		data.put(new TabNumber("-1"), emp);
+		
+		System.out.println(data.get(new TabNumber("-1")));//null
+		
+		if (data.containsKey(new TabNumber("-1"))){
+			System.out.println(data.get(new TabNumber("-1")));
 		}
 		
 	}
