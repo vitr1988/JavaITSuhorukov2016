@@ -1,17 +1,20 @@
 package ru.suhorukov.collection;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
+import java.util.stream.Stream;
 
 import ru.suhorukov.auto.Car;
 
@@ -92,12 +95,12 @@ public class CollectionTest {
 //			}
 //		});
 		
-		Set<String> newSet = new TreeSet<>(
-			(o1, o2) -> {
-				System.out.println("gfdgf"); 
-				return -o1.compareTo(o2);
-			}
-		);
+		Comparator<String> comparator = (o1,  o2) -> {
+			System.out.println("gfdgf"); 
+			return -o1.compareTo(o2);
+		};
+		
+		Set<String> newSet = new TreeSet<>(comparator);
 		
 		for (String str : strList){
 			newSet.add(str);
@@ -106,6 +109,26 @@ public class CollectionTest {
 		System.out.println(intSet);
 		System.out.println(newSet);
 		
+		System.out.println("------------");
+		System.out.println(strList);
+		Stream<String> stream = strList.stream().filter(e -> e.startsWith("Test0"));
+		System.out.println(stream.count());
+		
+		Collections.sort(strList, (arg1, arg2) -> arg1.compareTo(arg2));
+		System.out.println(strList);
+		
+		Set<String> setSt = new TreeSet<>(strList);
+//		Set<String> set = (Set<String>) strList;
+		Set<String> unmodifisbleSet = Collections.unmodifiableSet(setSt);
+		unmodifisbleSet.add("fsghnsgksgf");
+		
+		Iterator<String> iter = strList.iterator();
+		while(iter.hasNext()){
+			String str = iter.next();
+		}
+		ListIterator<String> listIterator = strList.listIterator();
+		
+		
 //		Set<Generic<Integer>> set = new TreeSet<>(new Comparator<Generic<Integer>>() {
 //			@Override
 //			public int compare(Generic<Integer> o1, Generic<Integer> o2) {
@@ -113,12 +136,12 @@ public class CollectionTest {
 //			}
 //		});
 		
-		Stack<Integer> stack = new Stack<>();
-		
-		Queue<Integer> quue = new PriorityQueue<>();
-		quue.offer(1);
-		System.out.println(quue.peek());
-		System.out.println(quue);
+//		Stack<Integer> stack = new Stack<>();
+//		
+//		Queue<Integer> quue = new PriorityQueue<>();
+//		quue.offer(1);
+//		System.out.println(quue.peek());
+//		System.out.println(quue);
 		
 	}
 }
