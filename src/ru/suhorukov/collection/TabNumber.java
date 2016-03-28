@@ -5,6 +5,8 @@ public class TabNumber {
 	private String tabNumber;
 	private Integer orderId;
 
+//	public TabNumber(){}
+			
 	public TabNumber(String tabNumer) {
 		this.tabNumber = tabNumer;
 	}
@@ -13,7 +15,7 @@ public class TabNumber {
 		this.orderId = id;
 	}
 	
-	public boolean checkTabNumber(){
+	private boolean checkTabNumber(){
 		return Integer.decode(tabNumber) >= 100 
 				&& Integer.decode(tabNumber) <= 10000;
 	}
