@@ -40,11 +40,27 @@ public class ThreadTest {
 				}
 			, "newThread2");
 		
-		logger.start();
-		logger2.start();
-		newThread.start();
-		newThread1.start();
-		newThread2.start();
+		try {
+			logger.start();
+//			logger.join();
+			
+			logger2.start();
+//			logger2.join();
+			
+			newThread.start();
+//			newThread.join();
+			
+			newThread1.start();
+			newThread1.join();
+			
+			newThread2.start();
+			newThread2.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 }
