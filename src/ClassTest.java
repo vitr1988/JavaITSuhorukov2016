@@ -3,6 +3,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Date;
 
+import ru.suhorukov.example.Matrix;
+
 public class ClassTest {
 
 	@SuppressWarnings("deprecation")
@@ -22,6 +24,17 @@ public class ClassTest {
 		
 		try {
 			Class<?> tabNumberClass = Class.forName("ru.suhorukov.collection.TabNumber");
+			
+			Object obj = clascString.newInstance();
+			Constructor claConstructor = clascString.getDeclaredConstructor(int.class);
+			for (Constructor constr : clascString.getConstructors()){
+				if (constr.getParameterTypes().length == 2){
+				}
+			}
+			Object m = claConstructor.newInstance(3, 3);
+//			Method method = classString.getDeclaredMethod("setName", String.class);
+//			Object f = method.invoke(obj, "flkhdiodg");
+			
 //			Object object = tabNumberClass.newInstance();
 //			Constructor<?> contstructor = tabNumberClass.getConstructor(Integer.class);
 			Constructor<?> contstructor = tabNumberClass.getConstructor(String.class);
