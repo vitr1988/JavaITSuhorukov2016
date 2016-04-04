@@ -13,11 +13,12 @@ public class DepositTest {
 		for (int i = 0; i < 6; i++){
 			Thread salaryThread = new Thread(new Salary(clientDeposit, lock));
 			Thread spenderThread = new Thread(new Spender(clientDeposit, 3000, lock));
-			Thread viewThread = new Thread(new ViewActualData(clientDeposit, lock));
+//			Thread viewThread = new Thread(new ViewActualData(clientDeposit, lock));
 			salaryThread.start();
 			spenderThread.start();
-			viewThread.start();
+//			viewThread.start();
 		}
+		System.out.println(clientDeposit.getRestSum());	
 	}
 	
 	static class Salary implements Runnable {

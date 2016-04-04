@@ -1,23 +1,25 @@
 package ru.suhorukov.concurrency;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Deposit {
 
 	String accountNumber;
-	int restSum;
+	AtomicInteger restSum;
 	
 	public Deposit(String number){
 		this.accountNumber = number;
-		this.restSum = 0;
+		this.restSum = new AtomicInteger(0);
 	}
 	
-	public synchronized int getRestSum() {
-		return restSum;
+	public int getRestSum() {
+		return restSum.get();
 	}
-	public synchronized void setRestSum(int restSum) {
-		this.restSum = restSum;
+	public void setRestSum(int restSum) {
+		this.restSum.set(restSum);
 	}
 	
-	public synchronized void modifyRest(int value){
-		setRestSum(getRestSum() + value);
+	public void modifyRest(int value){
+		this.restSum.set(this.restSum.addAndGet(value));
 	}
 }
