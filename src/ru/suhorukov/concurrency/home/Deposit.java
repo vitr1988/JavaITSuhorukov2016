@@ -1,11 +1,20 @@
 package ru.suhorukov.concurrency.home;
 
-public class Deposit {
+import java.io.FileNotFoundException;
+import java.io.Serializable;
 
-	String accountNumber;
-	int restSum;
+public class Deposit implements Serializable {
+
+	private static final long serialVersionUID = 5116374936440848483L;
 	
-	public Deposit(String number){
+	transient String accountNumber;
+	int restSum = 0;
+	boolean flag = false;
+	
+//	Reader reader = new BufferedReader(new FileReader("adsifosi.txt"));
+	
+	
+	public Deposit(String number) throws FileNotFoundException {
 		this.accountNumber = number;
 		this.restSum = 0;
 	}
@@ -19,6 +28,10 @@ public class Deposit {
 	
 	public void modifyRest(int value){
 		this.restSum += value;
+	}
+	
+	public void print(){
+		System.out.println(accountNumber + " " + restSum);
 	}
 }
 
