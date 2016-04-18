@@ -47,7 +47,7 @@ public class NetWorkTest {
 //					System.out.println(line);
 //				}
 //			}
-			URLConnection connection = javaCourseURL.openConnection();
+			URLConnection connection = javaCourseURL.openConnection();//соединение формальное!!!
 			String str = "param1=" + URLEncoder.encode("мама мыла раму", "UTF-8")
 				+ "&param2=afgdgfg";
 			connection.addRequestProperty("CustomHeader", "CustomHeader");
@@ -55,7 +55,9 @@ public class NetWorkTest {
 			
 			OutputStream outputStream = connection.getOutputStream();
 			outputStream.write(str.getBytes());
-			try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))){
+			
+			connection.connect();////реальное соединение!!!
+			try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))){//реальное соединение!!!
 				String line = "";
 				while((line = reader.readLine()) != null){
 					System.out.println(line);
