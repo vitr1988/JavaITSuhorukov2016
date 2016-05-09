@@ -3,9 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+.title {
+	display: block; 
+	color: red; 
+	font-weight: bold
+}
+</style>
 </head>
 <body>
 
-fskljgofgs
+<div>
+
+<form action="/JavaITSuhorukov2016/auth" method="post">
+<span class="title">Добро пожаловать в систему. Введите Ваши данные</span>
+<label for="login">Логин: </label><input type="text" id="login" name="login"><br>
+<label for="password">Пароль: </label><input type="password" id="password" name="password"><br><br>
+<input type="submit" name="Авторизация">
+<input type="hidden" name="jsessionid" value="42378954"/>
+</form>
+
+</div>
+
 </body>
 </html>
