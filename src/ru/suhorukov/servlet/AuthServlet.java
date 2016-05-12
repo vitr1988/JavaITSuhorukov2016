@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.SingleThreadModel;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +39,8 @@ public class AuthServlet extends HttpServlet {
 		else {
 			PrintWriter pw = response.getWriter();
 			pw.println("<html><head><title>Авторизация отклонена.</title></head><body>Неуспешная попытка авторизации. <a href=\"" +  request.getContextPath() + "/index.html\">Попробуйте еще раз!</a></body></html>");
+//			pw.print(new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date()));
+			
 			pw.flush();
 			pw.close();
 		}

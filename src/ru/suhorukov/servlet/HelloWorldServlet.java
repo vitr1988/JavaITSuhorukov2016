@@ -1,9 +1,6 @@
 package ru.suhorukov.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.Enumeration;
 
 import javax.servlet.ServletConfig;
@@ -86,6 +83,7 @@ public class HelloWorldServlet extends HttpServlet {
 		System.out.println(session.getId());
 		session.setAttribute("helloWorldVisited", Boolean.TRUE.toString());
 		session.setMaxInactiveInterval(30);
+		
 	}
 
 	/**
